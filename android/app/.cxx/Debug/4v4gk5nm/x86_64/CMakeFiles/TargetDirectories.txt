@@ -1,0 +1,12 @@
+/Users/nagakumar/StudioProjects/Couriour_Connect/android/app/.cxx/Debug/4v4gk5nm/x86_64/CMakeFiles/appmodules.dir
+/Users/nagakumar/StudioProjects/Couriour_Connect/android/app/.cxx/Debug/4v4gk5nm/x86_64/CMakeFiles/edit_cache.dir
+/Users/nagakumar/StudioProjects/Couriour_Connect/android/app/.cxx/Debug/4v4gk5nm/x86_64/CMakeFiles/rebuild_cache.dir
+/Users/nagakumar/StudioProjects/Couriour_Connect/android/app/.cxx/Debug/4v4gk5nm/x86_64/rngesturehandler_codegen_autolinked_build/CMakeFiles/react_codegen_rngesturehandler_codegen.dir
+/Users/nagakumar/StudioProjects/Couriour_Connect/android/app/.cxx/Debug/4v4gk5nm/x86_64/rngesturehandler_codegen_autolinked_build/CMakeFiles/edit_cache.dir
+/Users/nagakumar/StudioProjects/Couriour_Connect/android/app/.cxx/Debug/4v4gk5nm/x86_64/rngesturehandler_codegen_autolinked_build/CMakeFiles/rebuild_cache.dir
+/Users/nagakumar/StudioProjects/Couriour_Connect/android/app/.cxx/Debug/4v4gk5nm/x86_64/safeareacontext_autolinked_build/CMakeFiles/react_codegen_safeareacontext.dir
+/Users/nagakumar/StudioProjects/Couriour_Connect/android/app/.cxx/Debug/4v4gk5nm/x86_64/safeareacontext_autolinked_build/CMakeFiles/edit_cache.dir
+/Users/nagakumar/StudioProjects/Couriour_Connect/android/app/.cxx/Debug/4v4gk5nm/x86_64/safeareacontext_autolinked_build/CMakeFiles/rebuild_cache.dir
+/Users/nagakumar/StudioProjects/Couriour_Connect/android/app/.cxx/Debug/4v4gk5nm/x86_64/rnscreens_autolinked_build/CMakeFiles/react_codegen_rnscreens.dir
+/Users/nagakumar/StudioProjects/Couriour_Connect/android/app/.cxx/Debug/4v4gk5nm/x86_64/rnscreens_autolinked_build/CMakeFiles/edit_cache.dir
+/Users/nagakumar/StudioProjects/Couriour_Connect/android/app/.cxx/Debug/4v4gk5nm/x86_64/rnscreens_autolinked_build/CMakeFiles/rebuild_cache.dir

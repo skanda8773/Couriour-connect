@@ -1,33 +1,48 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import Login from '../screens/LoginScreen';
-import Signup from '../screens/SignupScreen';
-import Home from '../screens/HomeScreen';
-
-import SendParcel from '../screens/SendParcelScreen';
-import Confirmation from '../screens/ConfirmationScreen';
-import Track from '../screens/TrackParcelScreen';
-import ParcelDetails from '../screens/ParcelDetailsScreen';
-import MyParcels from '../screens/MyParcelsScreen';
-import Notifications from '../screens/NotificationsScreen';
-import Profile from '../screens/ProfileScreen';
+import {
+  AdminDashboardScreen,
+  AdminLoginScreen,
+  AdminParcelDetailsScreen,
+  ConfirmationScreen,
+  HomeScreen,
+  LoginScreen,
+  MyParcelsScreen,
+  NotificationsScreen,
+  ParcelDetailsScreen,
+  ParcelListScreen,
+  ProfileScreen,
+  QRScannerScreen,
+  SendParcelScreen,
+  SignupScreen,
+  SplashScreen,
+  TrackParcelScreen,
+  UpdateStatusScreen,
+} from '../screens/DesignScreens';
 
 const Stack = createStackNavigator();
 
 export default function StackNavigator() {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="Login" component={Login}/>
-      <Stack.Screen name="Signup" component={Signup}/>
-      <Stack.Screen name="Home" component={Home}/>
-      <Stack.Screen name="SendParcel" component={SendParcel}/>
-      <Stack.Screen name="Confirmation" component={Confirmation}/>
-      <Stack.Screen name="Track" component={Track}/>
-      <Stack.Screen name="ParcelDetails" component={ParcelDetails}/>
-      <Stack.Screen name="MyParcels" component={MyParcels}/>
-      <Stack.Screen name="Notifications" component={Notifications}/>
-      <Stack.Screen name="Profile" component={Profile}/>
+    <Stack.Navigator screenOptions={{headerShown: false}} initialRouteName="Splash">
+      <Stack.Screen name="Splash" component={SplashScreen} />
+      <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="Signup" component={SignupScreen} />
+      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="SendParcel" component={SendParcelScreen} />
+      <Stack.Screen name="Confirmation" component={ConfirmationScreen} />
+      <Stack.Screen name="Track" component={TrackParcelScreen} />
+      <Stack.Screen name="ParcelDetails" component={ParcelDetailsScreen} />
+      <Stack.Screen name="MyParcels" component={MyParcelsScreen} />
+      <Stack.Screen name="Notifications" component={NotificationsScreen} />
+      <Stack.Screen name="Profile" component={ProfileScreen} />
+      <Stack.Screen name="AdminLogin" component={AdminLoginScreen} />
+      <Stack.Screen name="AdminDashboard" component={AdminDashboardScreen} />
+      <Stack.Screen name="ParcelList" component={ParcelListScreen} />
+      <Stack.Screen name="AdminParcelDetails" component={AdminParcelDetailsScreen} />
+      <Stack.Screen name="UpdateStatus" component={UpdateStatusScreen} />
+      <Stack.Screen name="QRScanner" component={QRScannerScreen} />
     </Stack.Navigator>
   );
 }
