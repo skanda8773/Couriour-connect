@@ -1,6 +1,6 @@
 import React from 'react';
 import {Pressable, Text, View} from 'react-native';
-import {Button, Card, Field, HeroTitle, Shell} from '../ui';
+import {Button, Card, Field, HeroTitle, Shell} from '../ui/ui';
 
 export default function SignupScreen({navigation}) {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text, View} from 'react-native';
-import {BottomNav, Card, ListRow, QuickAction, SectionTitle, Shell} from '../ui';
+import {BottomNav, Card, ListRow, QuickAction, SectionTitle, Shell} from '../ui/ui';
 
 export default function HomeScreen({navigation}) {
   return (
