@@ -20,6 +20,10 @@ android/.idea
 android/local.properties
 *.apk
 *.aab
+android/app/build/
+android/.cxx/
+android/app/.cxx/
+android/app/.externalNativeBuild/
 
 # iOS
 ios/Pods
