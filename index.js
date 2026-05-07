@@ -1,4 +1,5 @@
 import 'react-native-gesture-handler';
+// Import Tailwind global styles (processed by NativeWind)
 import './global.css';
 
 /**
