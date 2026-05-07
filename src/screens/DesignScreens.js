@@ -11,7 +11,7 @@ import {
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 const C = {
-  primary: '#2F6FED',
+  primary: '#2f6fed',
   primaryDark: '#234EBB',
   primarySoft: '#DCE8FF',
   background: '#F4F6FB',
