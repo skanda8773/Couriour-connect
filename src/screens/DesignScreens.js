@@ -365,8 +365,19 @@ export function AuthChoiceScreen({navigation}) {
           <Text style={styles.choiceTitle}>Who are you?</Text>
           <Text style={styles.choiceSub}>Pick the option that matches your account.</Text>
 
-          <Button label="Customer Login" onPress={() => navigation.navigate('Login')} style={styles.choiceBtn} />
-          <Button label="Admin Login" type="soft" onPress={() => navigation.navigate('AdminLogin')} style={[styles.choiceBtn, {marginTop: 12}]} />
+          <View style={styles.choiceActionsRow}>
+            <Pressable onPress={() => navigation.navigate('Login')} style={({pressed}) => [styles.choiceAction, styles.choiceActionCustomer, pressed && styles.choiceActionPressed]}>
+              <Text style={styles.choiceActionEmoji}>👤</Text>
+              <Text style={styles.choiceActionTitle}>Customer Login</Text>
+              <Text style={styles.choiceActionSubtitle}>For parcel tracking & booking</Text>
+            </Pressable>
+
+            <Pressable onPress={() => navigation.navigate('AdminLogin')} style={({pressed}) => [styles.choiceAction, styles.choiceActionAdmin, pressed && styles.choiceActionPressed]}>
+              <Text style={styles.choiceActionEmoji}>🛡️</Text>
+              <Text style={styles.choiceActionTitle}>Admin Login</Text>
+              <Text style={styles.choiceActionSubtitle}>Manage deliveries & updates</Text>
+            </Pressable>
+          </View>
         </Card>
       </View>
     </Shell>
@@ -923,10 +934,26 @@ const styles = StyleSheet.create({
   authCardWrap: {paddingHorizontal: 18, paddingBottom: 20},
   authCard: {padding: 16},
   choiceWrap: {flex: 1, justifyContent: 'center', paddingHorizontal: 18},
-  choiceCard: {padding: 18},
-  choiceTitle: {fontSize: 18, color: C.text, fontWeight: '800', textAlign: 'center'},
+  choiceCard: {padding: 18, borderRadius: 24},
+  choiceTitle: {fontSize: 20, color: C.text, fontWeight: '800', textAlign: 'center'},
   choiceSub: {fontSize: 12, color: C.muted, textAlign: 'center', marginTop: 6, marginBottom: 18},
-  choiceBtn: {marginTop: 0},
+  choiceActionsRow: {flexDirection: 'row', gap: 12},
+  choiceAction: {
+    flex: 1,
+    minHeight: 128,
+    borderRadius: 20,
+    paddingHorizontal: 14,
+    paddingVertical: 16,
+    borderWidth: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  choiceActionCustomer: {backgroundColor: C.softBlue, borderColor: '#CDE0FF'},
+  choiceActionAdmin: {backgroundColor: C.softGreen, borderColor: '#CFEFDA'},
+  choiceActionPressed: {transform: [{scale: 0.98}], opacity: 0.92},
+  choiceActionEmoji: {fontSize: 24, marginBottom: 10},
+  choiceActionTitle: {fontSize: 15, fontWeight: '800', color: C.text, textAlign: 'center'},
+  choiceActionSubtitle: {fontSize: 10, color: C.muted, textAlign: 'center', marginTop: 4, lineHeight: 14},
   forgotWrap: {alignSelf: 'flex-end', marginTop: 8},
   forgotText: {fontSize: 11, color: C.primary, fontWeight: '600'},
   footerLinkWrap: {alignItems: 'center', marginTop: 12},
