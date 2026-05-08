@@ -3,6 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import {
   AdminDashboardScreen,
+  AuthChoiceScreen,
   AdminLoginScreen,
   AdminParcelDetailsScreen,
   ConfirmationScreen,
@@ -27,6 +28,7 @@ export default function StackNavigator() {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}} initialRouteName="Splash">
       <Stack.Screen name="Splash" component={SplashScreen} />
+      <Stack.Screen name="AuthChoice" component={AuthChoiceScreen} />
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="Signup" component={SignupScreen} />
       <Stack.Screen name="Home" component={HomeScreen} />

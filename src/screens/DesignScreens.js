@@ -345,9 +345,29 @@ export function SplashScreen({navigation}) {
         <Text style={styles.splashTitle}>CourierConnect</Text>
         <Text style={styles.splashSub}>Delivering Trust, Every Mile</Text>
         <View style={styles.splashDot} />
-        <Pressable onPress={() => navigation.replace('Login')} style={styles.splashCta}>
+        <Pressable onPress={() => navigation.replace('AuthChoice')} style={styles.splashCta}>
           <Text style={styles.splashCtaText}>Get Started</Text>
         </Pressable>
+      </View>
+    </Shell>
+  );
+}
+
+export function AuthChoiceScreen({navigation}) {
+  return (
+    <Shell style={{backgroundColor: C.primary}} scroll={false}>
+      <View style={styles.choiceWrap}>
+        <View style={styles.authTop}>
+          <HeroTitle title="Choose Login Type" subtitle="Continue as an admin or customer" dark align="center" />
+        </View>
+
+        <Card style={styles.choiceCard}>
+          <Text style={styles.choiceTitle}>Who are you?</Text>
+          <Text style={styles.choiceSub}>Pick the option that matches your account.</Text>
+
+          <Button label="Customer Login" onPress={() => navigation.navigate('Login')} style={styles.choiceBtn} />
+          <Button label="Admin Login" type="soft" onPress={() => navigation.navigate('AdminLogin')} style={[styles.choiceBtn, {marginTop: 12}]} />
+        </Card>
       </View>
     </Shell>
   );
@@ -865,6 +885,7 @@ export function QRScannerScreen({navigation}) {
 
 export const Screens = {
   SplashScreen,
+  AuthChoiceScreen,
   LoginScreen,
   SignupScreen,
   HomeScreen,
@@ -901,6 +922,11 @@ const styles = StyleSheet.create({
   authTop: {paddingHorizontal: 18, paddingTop: 18, paddingBottom: 16},
   authCardWrap: {paddingHorizontal: 18, paddingBottom: 20},
   authCard: {padding: 16},
+  choiceWrap: {flex: 1, justifyContent: 'center', paddingHorizontal: 18},
+  choiceCard: {padding: 18},
+  choiceTitle: {fontSize: 18, color: C.text, fontWeight: '800', textAlign: 'center'},
+  choiceSub: {fontSize: 12, color: C.muted, textAlign: 'center', marginTop: 6, marginBottom: 18},
+  choiceBtn: {marginTop: 0},
   forgotWrap: {alignSelf: 'flex-end', marginTop: 8},
   forgotText: {fontSize: 11, color: C.primary, fontWeight: '600'},
   footerLinkWrap: {alignItems: 'center', marginTop: 12},
