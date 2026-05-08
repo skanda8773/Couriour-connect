@@ -1,88 +1,24 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-} from 'react-native';
+import {View} from 'react-native';
+import {Shell, Card, HeroTitle, Button} from '../ui/ui';
 
-// A simple, focused "Who are you?" screen. Navigates to the existing
-// app routes `Login` (customer) and `AdminLogin` (admin).
+// Re-implemented to match the project's UI primitives (Shell/Card/Button).
 export default function WhoAreYouScreen({navigation}) {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Who Are You?</Text>
+    <Shell className="bg-primary">
+      <View className="px-5 pb-4 pt-5">
+        <HeroTitle title="Choose Login Type" subtitle="Continue as an admin or customer" dark align="center" />
+      </View>
 
-      <TouchableOpacity
-        style={styles.customerButton}
-        activeOpacity={0.86}
-        onPress={() => navigation.navigate('Login')}
-      >
-        <Text style={styles.buttonText}>Customer Login</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity
-        style={styles.adminButton}
-        activeOpacity={0.86}
-        onPress={() => navigation.navigate('AdminLogin')}
-      >
-        <Text style={styles.buttonText}>Admin Login</Text>
-      </TouchableOpacity>
-    </View>
+      <View className="px-5 pb-6">
+        <Card className="p-4">
+          <View className="space-y-3">
+            <Button label="Customer Login" onPress={() => navigation.navigate('Login')} className="w-full" />
+            <Button label="Admin Login" type="soft" onPress={() => navigation.navigate('AdminLogin')} className="w-full" />
+          </View>
+        </Card>
+      </View>
+    </Shell>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5F7FA',
-    padding: 20,
-  },
-
-  title: {
-    fontSize: 28,
-    fontWeight: '800',
-    marginBottom: 36,
-    color: '#0F172A',
-  },
-
-  customerButton: {
-    width: '92%',
-    backgroundColor: '#F1F3F6',
-    paddingVertical: 16,
-    borderRadius: 16,
-    alignItems: 'center',
-    marginBottom: 16,
-    borderWidth: 1,
-    borderColor: '#D9DEE5',
-    shadowColor: '#000',
-    shadowOffset: {width: 0, height: 3},
-    shadowOpacity: 0.08,
-    shadowRadius: 6,
-    elevation: 3,
-  },
-
-  adminButton: {
-    width: '92%',
-    backgroundColor: '#F1F3F6',
-    paddingVertical: 16,
-    borderRadius: 16,
-    alignItems: 'center',
-    borderWidth: 1,
-    borderColor: '#D9DEE5',
-    shadowColor: '#000',
-    shadowOffset: {width: 0, height: 3},
-    shadowOpacity: 0.08,
-    shadowRadius: 6,
-    elevation: 3,
-  },
-
-  buttonText: {
-    color: '#0F172A',
-    fontSize: 16,
-    fontWeight: '700',
-  },
-});
 
