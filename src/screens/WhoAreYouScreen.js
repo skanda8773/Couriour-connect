@@ -5,12 +5,13 @@ import {Shell, Card, HeroTitle, Button} from '../ui/ui';
 // Re-implemented to match the project's UI primitives (Shell/Card/Button).
 export default function WhoAreYouScreen({navigation}) {
   return (
-    <Shell className="bg-primary">
-      <View className="px-5 pb-4 pt-5">
-        <HeroTitle title="Choose Login Type" subtitle="Continue as an admin or customer" dark align="center" />
-      </View>
+    // disable scrolling so we can vertically center the content
+    <Shell className="bg-primary" scroll={false}>
+      <View className="flex-1 justify-center px-5">
+        <View className="mb-6">
+          <HeroTitle title="Choose Login Type" subtitle="Continue as an admin or customer" dark align="center" />
+        </View>
 
-      <View className="px-5 pb-6">
         <Card className="p-4">
           <View className="space-y-3">
             <Button label="Customer Login" onPress={() => navigation.navigate('Login')} className="w-full" />
