@@ -365,23 +365,31 @@ export function AuthChoiceScreen({navigation}) {
           <Text style={styles.choiceTitle}>Who are you?</Text>
           <Text style={styles.choiceSub}>Pick the option that matches your account.</Text>
 
-          <View style={styles.choiceActionsRow}>
+          <View style={styles.choiceActionsStack}>
             <Pressable onPress={() => navigation.navigate('Login')} style={({pressed}) => [styles.choiceAction, styles.choiceActionCustomer, pressed && styles.choiceActionPressed]}>
-              <View style={[styles.choiceActionBadge, styles.choiceActionBadgeCustomer]}>
-                <Text style={styles.choiceActionBadgeText}>Customer</Text>
+              <View style={styles.choiceActionTopRow}>
+                <Text style={styles.choiceActionEmoji}>👤</Text>
+                <View style={[styles.choiceActionBadge, styles.choiceActionBadgeCustomer]}>
+                  <Text style={styles.choiceActionBadgeText}>Customer</Text>
+                </View>
               </View>
-              <Text style={styles.choiceActionEmoji}>👤</Text>
-              <Text style={styles.choiceActionTitle}>Customer Login</Text>
-              <Text style={styles.choiceActionSubtitle}>For parcel tracking & booking</Text>
+              <View style={styles.choiceActionTextWrap}>
+                <Text style={styles.choiceActionTitle}>Customer Login</Text>
+                <Text style={styles.choiceActionSubtitle}>For parcel tracking & booking</Text>
+              </View>
             </Pressable>
 
             <Pressable onPress={() => navigation.navigate('AdminLogin')} style={({pressed}) => [styles.choiceAction, styles.choiceActionAdmin, pressed && styles.choiceActionPressed]}>
-              <View style={[styles.choiceActionBadge, styles.choiceActionBadgeAdmin]}>
-                <Text style={styles.choiceActionBadgeText}>Admin</Text>
+              <View style={styles.choiceActionTopRow}>
+                <Text style={styles.choiceActionEmoji}>🛡️</Text>
+                <View style={[styles.choiceActionBadge, styles.choiceActionBadgeAdmin]}>
+                  <Text style={styles.choiceActionBadgeText}>Admin</Text>
+                </View>
               </View>
-              <Text style={styles.choiceActionEmoji}>🛡️</Text>
-              <Text style={styles.choiceActionTitle}>Admin Login</Text>
-              <Text style={styles.choiceActionSubtitle}>Manage deliveries & updates</Text>
+              <View style={styles.choiceActionTextWrap}>
+                <Text style={styles.choiceActionTitle}>Admin Login</Text>
+                <Text style={styles.choiceActionSubtitle}>Manage deliveries & updates</Text>
+              </View>
             </Pressable>
           </View>
         </Card>
@@ -943,16 +951,17 @@ const styles = StyleSheet.create({
   choiceCard: {padding: 18, borderRadius: 24},
   choiceTitle: {fontSize: 20, color: C.text, fontWeight: '800', textAlign: 'center'},
   choiceSub: {fontSize: 12, color: C.muted, textAlign: 'center', marginTop: 6, marginBottom: 18},
-  choiceActionsRow: {flexDirection: 'row', gap: 12},
+  choiceActionsStack: {gap: 12},
   choiceAction: {
-    flex: 1,
-    minHeight: 142,
+    width: '100%',
+    minHeight: 94,
     borderRadius: 24,
-    paddingHorizontal: 14,
-    paddingVertical: 16,
+    paddingHorizontal: 16,
+    paddingVertical: 14,
     borderWidth: 2,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: 'space-between',
+    alignItems: 'stretch',
+    flexDirection: 'row',
     shadowColor: '#10203C',
     shadowOpacity: 0.12,
     shadowRadius: 10,
@@ -960,15 +969,17 @@ const styles = StyleSheet.create({
     elevation: 4,
   },
   choiceActionCustomer: {backgroundColor: '#EDF4FF', borderColor: '#9CB9FF'},
-  choiceActionAdmin: {backgroundColor: '#EDFBEF', borderColor: '#97D8A9'},
+  choiceActionAdmin: {backgroundColor: '#F8FBFF', borderColor: '#AFC2DF'},
   choiceActionPressed: {transform: [{scale: 0.98}], opacity: 0.92},
-  choiceActionBadge: {paddingHorizontal: 10, paddingVertical: 4, borderRadius: 999, marginBottom: 10},
+  choiceActionTopRow: {justifyContent: 'space-between', alignItems: 'center', flexDirection: 'row'},
+  choiceActionTextWrap: {marginTop: 'auto'},
+  choiceActionBadge: {paddingHorizontal: 10, paddingVertical: 4, borderRadius: 999},
   choiceActionBadgeCustomer: {backgroundColor: '#D7E6FF'},
-  choiceActionBadgeAdmin: {backgroundColor: '#D9F2E1'},
+  choiceActionBadgeAdmin: {backgroundColor: '#DCE6F6'},
   choiceActionBadgeText: {fontSize: 10, fontWeight: '800', color: C.text, letterSpacing: 0.4},
-  choiceActionEmoji: {fontSize: 24, marginBottom: 10},
-  choiceActionTitle: {fontSize: 16, fontWeight: '800', color: C.text, textAlign: 'center'},
-  choiceActionSubtitle: {fontSize: 10, color: C.muted, textAlign: 'center', marginTop: 5, lineHeight: 14},
+  choiceActionEmoji: {fontSize: 22},
+  choiceActionTitle: {fontSize: 16, fontWeight: '800', color: C.text, textAlign: 'left'},
+  choiceActionSubtitle: {fontSize: 10, color: C.muted, textAlign: 'left', marginTop: 4, lineHeight: 14},
   forgotWrap: {alignSelf: 'flex-end', marginTop: 8},
   forgotText: {fontSize: 11, color: C.primary, fontWeight: '600'},
   footerLinkWrap: {alignItems: 'center', marginTop: 12},
