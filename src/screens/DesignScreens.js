@@ -367,29 +367,19 @@ export function AuthChoiceScreen({navigation}) {
 
           <View style={styles.choiceActionsStack}>
             <Pressable onPress={() => navigation.navigate('Login')} style={({pressed}) => [styles.choiceAction, styles.choiceActionCustomer, pressed && styles.choiceActionPressed]}>
-              <View style={styles.choiceActionTopRow}>
+              <View style={styles.choiceActionIconWrap}>
                 <Text style={styles.choiceActionEmoji}>👤</Text>
-                <View style={[styles.choiceActionBadge, styles.choiceActionBadgeCustomer]}>
-                  <Text style={styles.choiceActionBadgeText}>Customer</Text>
-                </View>
               </View>
-              <View style={styles.choiceActionTextWrap}>
-                <Text style={styles.choiceActionTitle}>Customer Login</Text>
-                <Text style={styles.choiceActionSubtitle}>For parcel tracking & booking</Text>
-              </View>
+              <Text style={styles.choiceActionTitle}>Customer Login</Text>
+              <Text style={styles.choiceActionSubtitle}>For parcel tracking & booking</Text>
             </Pressable>
 
             <Pressable onPress={() => navigation.navigate('AdminLogin')} style={({pressed}) => [styles.choiceAction, styles.choiceActionAdmin, pressed && styles.choiceActionPressed]}>
-              <View style={styles.choiceActionTopRow}>
+              <View style={styles.choiceActionIconWrap}>
                 <Text style={styles.choiceActionEmoji}>🛡️</Text>
-                <View style={[styles.choiceActionBadge, styles.choiceActionBadgeAdmin]}>
-                  <Text style={styles.choiceActionBadgeText}>Admin</Text>
-                </View>
               </View>
-              <View style={styles.choiceActionTextWrap}>
-                <Text style={styles.choiceActionTitle}>Admin Login</Text>
-                <Text style={styles.choiceActionSubtitle}>Manage deliveries & updates</Text>
-              </View>
+              <Text style={styles.choiceActionTitle}>Admin Login</Text>
+              <Text style={styles.choiceActionSubtitle}>Manage deliveries & updates</Text>
             </Pressable>
           </View>
         </Card>
@@ -954,14 +944,14 @@ const styles = StyleSheet.create({
   choiceActionsStack: {gap: 12},
   choiceAction: {
     width: '100%',
-    minHeight: 94,
+    minHeight: 112,
     borderRadius: 24,
-    paddingHorizontal: 16,
-    paddingVertical: 14,
+    paddingHorizontal: 18,
+    paddingVertical: 16,
     borderWidth: 2,
-    justifyContent: 'space-between',
-    alignItems: 'stretch',
-    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'column',
     shadowColor: '#10203C',
     shadowOpacity: 0.12,
     shadowRadius: 10,
@@ -969,17 +959,12 @@ const styles = StyleSheet.create({
     elevation: 4,
   },
   choiceActionCustomer: {backgroundColor: '#EDF4FF', borderColor: '#9CB9FF'},
-  choiceActionAdmin: {backgroundColor: '#F8FBFF', borderColor: '#AFC2DF'},
+  choiceActionAdmin: {backgroundColor: '#F6F8FC', borderColor: '#AFC2DF'},
   choiceActionPressed: {transform: [{scale: 0.98}], opacity: 0.92},
-  choiceActionTopRow: {justifyContent: 'space-between', alignItems: 'center', flexDirection: 'row'},
-  choiceActionTextWrap: {marginTop: 'auto'},
-  choiceActionBadge: {paddingHorizontal: 10, paddingVertical: 4, borderRadius: 999},
-  choiceActionBadgeCustomer: {backgroundColor: '#D7E6FF'},
-  choiceActionBadgeAdmin: {backgroundColor: '#DCE6F6'},
-  choiceActionBadgeText: {fontSize: 10, fontWeight: '800', color: C.text, letterSpacing: 0.4},
+  choiceActionIconWrap: {width: 40, height: 40, borderRadius: 14, alignItems: 'center', justifyContent: 'center', marginBottom: 10, backgroundColor: 'rgba(255,255,255,0.58)'},
   choiceActionEmoji: {fontSize: 22},
-  choiceActionTitle: {fontSize: 16, fontWeight: '800', color: C.text, textAlign: 'left'},
-  choiceActionSubtitle: {fontSize: 10, color: C.muted, textAlign: 'left', marginTop: 4, lineHeight: 14},
+  choiceActionTitle: {fontSize: 16, fontWeight: '800', color: C.text, textAlign: 'center'},
+  choiceActionSubtitle: {fontSize: 10, color: C.muted, textAlign: 'center', marginTop: 4, lineHeight: 14},
   forgotWrap: {alignSelf: 'flex-end', marginTop: 8},
   forgotText: {fontSize: 11, color: C.primary, fontWeight: '600'},
   footerLinkWrap: {alignItems: 'center', marginTop: 12},
