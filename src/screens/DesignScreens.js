@@ -367,12 +367,18 @@ export function AuthChoiceScreen({navigation}) {
 
           <View style={styles.choiceActionsRow}>
             <Pressable onPress={() => navigation.navigate('Login')} style={({pressed}) => [styles.choiceAction, styles.choiceActionCustomer, pressed && styles.choiceActionPressed]}>
+              <View style={[styles.choiceActionBadge, styles.choiceActionBadgeCustomer]}>
+                <Text style={styles.choiceActionBadgeText}>Customer</Text>
+              </View>
               <Text style={styles.choiceActionEmoji}>👤</Text>
               <Text style={styles.choiceActionTitle}>Customer Login</Text>
               <Text style={styles.choiceActionSubtitle}>For parcel tracking & booking</Text>
             </Pressable>
 
             <Pressable onPress={() => navigation.navigate('AdminLogin')} style={({pressed}) => [styles.choiceAction, styles.choiceActionAdmin, pressed && styles.choiceActionPressed]}>
+              <View style={[styles.choiceActionBadge, styles.choiceActionBadgeAdmin]}>
+                <Text style={styles.choiceActionBadgeText}>Admin</Text>
+              </View>
               <Text style={styles.choiceActionEmoji}>🛡️</Text>
               <Text style={styles.choiceActionTitle}>Admin Login</Text>
               <Text style={styles.choiceActionSubtitle}>Manage deliveries & updates</Text>
@@ -940,20 +946,29 @@ const styles = StyleSheet.create({
   choiceActionsRow: {flexDirection: 'row', gap: 12},
   choiceAction: {
     flex: 1,
-    minHeight: 128,
-    borderRadius: 20,
+    minHeight: 142,
+    borderRadius: 24,
     paddingHorizontal: 14,
     paddingVertical: 16,
-    borderWidth: 1,
+    borderWidth: 2,
     justifyContent: 'center',
     alignItems: 'center',
+    shadowColor: '#10203C',
+    shadowOpacity: 0.12,
+    shadowRadius: 10,
+    shadowOffset: {width: 0, height: 6},
+    elevation: 4,
   },
-  choiceActionCustomer: {backgroundColor: C.softBlue, borderColor: '#CDE0FF'},
-  choiceActionAdmin: {backgroundColor: C.softGreen, borderColor: '#CFEFDA'},
+  choiceActionCustomer: {backgroundColor: '#EDF4FF', borderColor: '#9CB9FF'},
+  choiceActionAdmin: {backgroundColor: '#EDFBEF', borderColor: '#97D8A9'},
   choiceActionPressed: {transform: [{scale: 0.98}], opacity: 0.92},
+  choiceActionBadge: {paddingHorizontal: 10, paddingVertical: 4, borderRadius: 999, marginBottom: 10},
+  choiceActionBadgeCustomer: {backgroundColor: '#D7E6FF'},
+  choiceActionBadgeAdmin: {backgroundColor: '#D9F2E1'},
+  choiceActionBadgeText: {fontSize: 10, fontWeight: '800', color: C.text, letterSpacing: 0.4},
   choiceActionEmoji: {fontSize: 24, marginBottom: 10},
-  choiceActionTitle: {fontSize: 15, fontWeight: '800', color: C.text, textAlign: 'center'},
-  choiceActionSubtitle: {fontSize: 10, color: C.muted, textAlign: 'center', marginTop: 4, lineHeight: 14},
+  choiceActionTitle: {fontSize: 16, fontWeight: '800', color: C.text, textAlign: 'center'},
+  choiceActionSubtitle: {fontSize: 10, color: C.muted, textAlign: 'center', marginTop: 5, lineHeight: 14},
   forgotWrap: {alignSelf: 'flex-end', marginTop: 8},
   forgotText: {fontSize: 11, color: C.primary, fontWeight: '600'},
   footerLinkWrap: {alignItems: 'center', marginTop: 12},
